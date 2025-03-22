@@ -10,32 +10,29 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: BasicAppbar(
-        title: SvgPicture.asset(
-          AppVectors.logo,
-          height: 40,
-          width: 40,
+        title: SvgPicture.asset(AppVectors.logo, height: 40, width: 40),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [_registerText(),
+          SizedBox(height: 50),
+           _fullNameField()],
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          _registerText(),
-          
-        ],
-      )
     );
   }
 
   Widget _registerText() {
     return const Text(
       'Register',
-      style: TextStyle(
-        fontSize: 25,
-        fontWeight: FontWeight.bold,
-      ),
+      style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold, color: Colors.white),
       textAlign: TextAlign.center,
     );
   }
 
-
+  Widget _fullNameField() {
+    return TextField();
+  }
 }
